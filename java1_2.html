@@ -1,0 +1,102 @@
+<html>
+	<head>
+		<meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
+		<script src="scripts/shCore.js"></script>
+		<script type="text/javascript" src="scripts/shBrushJava.js"></script>
+		<script type="text/javascript" src="scripts/shBrushCpp.js"></script>
+
+		<link type="text/css" rel="stylesheet" href="styles/shCore.css" />
+		<link type="text/css" rel="stylesheet" href="styles/shCoreDefault.css" />
+		<link type="text/css" rel="stylesheet" href="styles/shThemeRDark.css" />
+		<script>SyntaxHighlighter.all();</script>
+		<link rel="stylesheet" type="text/css" href="s.css">
+		<title>Study</title>
+	</head>
+	<body>
+	<h1>コメント</h1>
+	<p>コメントはとっても便利だからさっそく紹介しておくよ。使わないと損するよ。</p>
+	
+	<h2>コメントってなんだ</h2>
+	<p>コメントとはコードの説明をするものだと考えてくれれば良いよ。</p>
+	<p>人間のために書いた説明を計算機が読む必要はないからコメント部分を計算機は無視するよ。</p>
+	
+	<br><br>
+	<h2>コメントを使おう</h2>
+	<p>以下に実際にコメントを使っている例をあげて説明する。</p>
+	<pre class="brush:java;">
+		class Test{
+		
+			//これはmainメソッド
+			public static void main(String[] args){
+				/*
+				したに書いてあるものはtestと出力する。
+				コメントテスト
+				*/
+				system.out.println("test");
+			}
+		
+		}
+	</pre>
+	<p>上の例では二種類のコメントを使っている。以下で説明するね。</p>
+	<pre class="brush:java;">
+			//これはmainメソッド</pre>
+	<p>この部分が一個目のコメントだよ。//の後ろの記述をコメントとするよ。</p>
+	<p>ただし、//の後ろの記述しかコメントとならないから複数行のコメントは無理だよ。</p>
+	<pre class="brush:java;">
+		/*
+		したに書いてあるものはtestと出力する。
+        コメントテスト
+        */</pre>
+	<p>この部分が二個目のコメント。/*を記述後に*/がくるまでの全ての記述をコメントとするよ。</p>
+	<p>*/がくるまでコメントとするから複数行のコメントが可能だよ。</p>
+	<p>ちなみに、コメントは色々なところに書くことができるから、</p>
+	<pre class="brush:java;">
+		class Test {
+
+			public static/*コメント*/ void main/*コメント*/(String[] args){
+				System.out.
+				/*
+				コメント
+				*/println(/*コメント*/3);//コメント
+			}
+
+		}
+    </pre>
+    <p>こんなこともできるけど、こんな見にくいのはダメダメだから。</p>
+	<p>どうでも良いことやわかりきったことをコメントしている最初の例もダメダメなコメントだからね。</p>
+	<p></p>
+	
+		
+	<br><br>
+	<h2>一時的に処理を無効化しよう</h2>
+	<p>有用なコメントの使いかたを紹介しておくよ。</p>
+	<pre class="brush:java;">
+		class Test{
+
+			public static void main(String[] args){
+				system.out.println("test");
+				system.out.println("aka");
+			}
+		
+		}
+	</pre>
+	<p>上のコードの5行目の処理を一時的に行わないようにしたい。
+	system.out.println("aka");を消せば処理は行われなくなるのだが、これはちょっと躊躇われる。
+	だって一時的が終ればまた必要になってsystem.out.println("aka");を書きなすはめになることが予想されるからね。</p>
+	<p>この問題はコメントを使い解決できる。</p>
+	<pre class="brush:java;">
+		class Test{
+
+			public static void main(String[] args){
+				system.out.println("test");
+				//system.out.println("aka");
+			}
+		
+		}
+	</pre>
+	<p>上の様に5行目をコメントとすれば良いんだね。コメント部分を計算機は無視するからこれで5行目は処理されなくなるよ。もとに戻したい時は//をはずすだけだしね。</p>
+	
+	
+		<br><br><br><p><a href="Study.html">もどる</a></p>
+	</body>
+<html>

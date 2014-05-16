@@ -1,0 +1,146 @@
+<html>
+	<head>
+		<meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
+		<script src="scripts/shCore.js"></script>
+		<script type="text/javascript" src="scripts/shBrushJava.js"></script>
+		<script type="text/javascript" src="scripts/shBrushCpp.js"></script>
+
+		<link type="text/css" rel="stylesheet" href="styles/shCore.css" />
+		<link type="text/css" rel="stylesheet" href="styles/shCoreDefault.css" />
+		<link type="text/css" rel="stylesheet" href="styles/shThemeRDark.css" />
+		<script>SyntaxHighlighter.all();</script>
+		<link rel="stylesheet" type="text/css" href="s.css">
+		<title>Study</title>
+	</head>
+	<body>
+		<h1>インクリメントとデクリメント</h1>
+		<p>よく目にするから説明を載せておくよ。</p>
+		
+		<h2>インクリメントってなんだ</h2>
+		<p>インクリメントってなんだって書いておきながら、まずはある変数iがあるとしてこのiが持っている値を1だけ増加させる方法を考えよう。
+		</p><p>iに5が入っていたのを6、iに10が入っていたのを11にするって感じなんだけどこれは以下の様なコードで実現できるよね。</p>
+		<pre class="brush:java;">
+					i = i+1;</pre>
+		<p>こんなのだったり</p>
+		<pre class="brush:java;">
+					i += 1;</pre>
+		<p>こんなのだったりね。インクリメント演算子は上の様な1だけ値を増加させる時に使えるものだよ。（三種類目の書き方みたいな感じかな）</p>
+		<p>じゃあ、実際どのようにインクリメント演算子を使うか例を上げるね。</p>
+		<pre class="brush:java;" title="例">
+					i++;
+					++i;</pre>
+		<p>例の一行目も二行目もどちらも「iの値を1増加」させているよ。</p><p>++変数名か変数名++とすることで実現が可能なんだね。</p>
+		<p>注意してほしいのは、</p>
+				<pre class="brush:java;">
+					i++;
+					++i;
+					i = i+1;
+					i += 1;</pre>
+		<p>上の4つは同じ意味だけど、これら4つと</p>
+		<pre class="brush:java;">
+					i + 1;</pre>
+		<p>は同じ意味にはならないことだよ。代入しているか代入してないかという点が異なっているよ。</p>
+		
+		<br><br>
+		<h2>デクリメントってなんだ</h2>
+		<p>デクリメントは「値を1減少させる」ものだよ。</p>
+		<pre class="brush:java;" title="例">
+					i--;
+					--i;</pre>
+		<p>例の様に使用することができるよ。++が--になっただけ。</p>
+		
+		<br><br>
+		<h2>例</h2>
+		<pre class="brush:java;" title="Test.java">
+			class Test{
+				public static void main(String[] args){
+					int i = 0;
+					System.out.println(i);
+					i++;
+					System.out.println(i);
+					++i;
+					System.out.println(i);
+					i--;
+					System.out.println(i);
+				}
+			}
+		</pre>
+		<pre class="brush:java;" title="実行結果">
+			0
+			1
+			2
+			1</pre>
+			
+		<br><br>
+		<h2>i++と++iの違い</h2>
+		<pre class="brush:java;">
+					i++;
+					++i;</pre>
+		<p>は、どちらも1増加させるって意味だったね。実はこの二つには違いがあるんだ。</p>
+		<p>これまでのように++iや--iを単体のみで使用している分には違いは生まれない。</p>
+		<p/>ただし、これらを他のもの（イコールとかね）と一緒に使うと違いが生まれえることがある。どういうことかというと<p>
+		<pre class="brush:java" title="例1-1">
+			class Test{
+				public static void main(String[] args){
+					int a = 0;
+					int b = 0;
+					b = a++;
+					System.out.println(a);//1を出力
+					System.out.println(b);//0を出力
+				}
+			}
+		</pre>
+		<p>と</p>
+		<pre class="brush:java" title="例1-2">
+			class Test{
+				public static void main(String[] args){
+					int a = 0;
+					int b = 0;
+					b = ++a;
+					System.out.println(a);//1を出力
+					System.out.println(b);//1を出力
+				}
+			}
+		</pre>
+		<p>では結果が異なるってことだよ。違いを生んでいるのは5行目だね。（そこしか違いないし）</p>
+		<p>例1-1の</p>
+		<pre class="brush:java">
+					b = a++;</pre>
+		<p>の部分は</p>
+		<pre class="brush:java">
+					b = a;
+					a++;</pre>
+		<p>という流れで処理されていると考えればいいよ。まず、bにaの値が代入されてその後にaの値が1増加されるって感じ。</p>
+		<p>逆に例1-2の</p>
+		<pre class="brush:java">
+					b = ++a;</pre>
+		<p>の部分は</p>
+		<pre class="brush:java">
+					a++;
+					b = a;</pre>
+		<p>という流れで処理されていると考えればいいよ。まず、aの値が1増加されてその後にbの値がaに代入されるって感じ。</p>
+		<p>つまり、i++とした場合はiの値が1増加されるのが後からになるってこと。このことを示す例をいくつかあげておくね。</p>
+		<pre class="brush:java" title="例2">
+			class Test{
+				public static void main(String[] args){
+					int b = 0;
+					System.out.println(b++);//0が表示される。表示の後に1増加する。
+					System.out.println(b);//1を表示
+					System.out.println(++b);//1増加して2になる。2を表示。
+				}
+			}
+		</pre>
+		<pre class="brush:java" title="例2">
+			class Test{
+				public static void main(String[] args){
+					int b = 0;
+					System.out.println(b++ * 10);//0*10の0が表示される。表示の後に1増加する。
+					System.out.println(b);//1を表示
+				}
+			}
+		</pre>
+		<p>こんな感じ。</p>
+		<p>--iとi--の違いも同じだからね。</p>
+		<br><br><br><p><a href="Study.html">もどる</a></p>
+	</body>
+<html>

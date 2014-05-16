@@ -1,0 +1,89 @@
+<html>
+	<head>
+		<meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
+		<script src="scripts/shCore.js"></script>
+		<script type="text/javascript" src="scripts/shBrushJava.js"></script>
+		<script type="text/javascript" src="scripts/shBrushCpp.js"></script>
+
+		<link type="text/css" rel="stylesheet" href="styles/shCore.css" />
+		<link type="text/css" rel="stylesheet" href="styles/shCoreDefault.css" />
+		<link type="text/css" rel="stylesheet" href="styles/shThemeRDark.css" />
+		<script>SyntaxHighlighter.all();</script>
+		<link rel="stylesheet" type="text/css" href="s.css">
+		<title>Study</title>
+	</head>
+	<body>
+		<h1>boolean</h1>
+		<p>intとかcharとかと違ってbooleanちょっとよくわかんないかもしれないから補足しておくよ。Cにはなかったしね。</p>
+		<p>後に説明する条件式と組み合わせてつかうことが多くなるよ。</p>
+		
+		<h2>trueとfalse</h2>
+		<p>boolean型の値はtrueとfalseだけしかない。</p>
+		<p>つまりboolean型の変数を宣言したとしたらその変数に代入できるものはtrueかfalseのどちらかってこと。</p>
+		<pre class="brush:java;" title="Test.java">
+			class Test{
+				public static void main(String[] args){
+					boolean b = true;
+					boolean b2 = false;
+				}
+			}
+		</pre>
+		<p>上のコードような感じでね。これはあまり面白くないけど、以下の様なコードも可能なんだよ。</p>
+		<pre class="brush:java;" title="例2">
+			class Test{
+				public static void main(String[] args){
+					boolean b;
+					b = 1<10;
+				}
+			}
+		</pre>
+		<p>例2ではbに1<10を代入しているかの様にみえるね。でもbには上でも述べた様に、trueかfalseしか入らないよ。</p>
+		<p>1<10は真か偽かっていったら真だよね。つまりbにはtrueが代入されるよ。
+		疑う人はSystem.out.println(b)ってやってごらんよ。
+		</p><p>同じような例をさらに示すね。</p>
+		<pre class="brush:java;" title="例3">
+			class Test{
+				public static void main(String[] args){
+					boolean b = ( 0>1 );//falseが代入
+					boolean b1 = ( 1<=30 );//trueが代入
+					boolean b2 = ( 1<1 );//falseが代入
+					boolean b3 = ( 1<=1 );//trueが代入
+					boolean b4 = ( 1==1 );//trueが代入
+					boolean b5 = ( 1!=8 );//trueが代入
+					boolean b6 = ( 1!=1 );//falseが代入
+				}
+			}
+		</pre>
+		<p>例3のうちみなれないものを説明しておくね。</p>
+		<p>==は右辺と左辺が同じかを調べるよ。同じだったらtrue、異なっていたらfalseだね。</p>
+		<p>!=は右辺と左辺が異なっているかを調べるよ。同じだったらfalse、異なっていたらtrueだね。</p>
+		<p>ちなみに!はノットみたいな感じで使うことができるよ。これも例を示すね。</p>
+		<pre class="brush:java;" title="例4">
+			class Test{
+				public static void main(String[] args){
+					boolean b = !true;//falseが代入
+					boolean b1 = !( 1<=30 );//falseが代入
+					boolean b2 = !( 1!=1 );//trueが代入
+				}
+			}
+		</pre>
+		<p>かつとまたはも使うことができるよ。trueかつfalseはfalse、trueまたはfalseはtrueみたいな感じでね。これも例を示すね。</p>
+		<p>かつが&&、またはが||となっていると考えてくれればいいよ。</p>
+		<pre class="brush:java;" title="例5">
+			class Test{
+				public static void main(String[] args){
+					boolean b = ( 1<20 ) && ( 2<30 );//trueが代入
+					boolean b1 = ( 1<=30 ) && ( 3<-30 );//falseが代入
+					boolean b2 = ( 1<=30 ) || ( 3<-30 );//trueが代入
+					boolean b3 = ( true || false );//trueが代入
+					boolean b4 = ( true && true );//trueが代入
+					boolean b5 = b && b1;//falseが代入
+				}
+			}
+		</pre>
+		<p>注意してほしいのは例えば3<2を例とすると(3<2)自体がfalseなのではなく、(3<2)を演算した結果falseが得られるということ。あんまりわかんないよね。
+		int i = 2+8;とするとiの値は10になるけど、それは(2+8)自体が10だからではなく(2+8)を演算した結果10が得られてiが10になるのと同じこと。これで
+		わかりやすくなったかな。</p>
+		<br><br><br><p><a href="Study.html">もどる</a></p>
+	</body>
+<html>

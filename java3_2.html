@@ -1,0 +1,123 @@
+<html>
+	<head>
+		<meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
+		<script src="scripts/shCore.js"></script>
+		<script type="text/javascript" src="scripts/shBrushJava.js"></script>
+		<script type="text/javascript" src="scripts/shBrushCpp.js"></script>
+
+		<link type="text/css" rel="stylesheet" href="styles/shCore.css" />
+		<link type="text/css" rel="stylesheet" href="styles/shCoreDefault.css" />
+		<link type="text/css" rel="stylesheet" href="styles/shThemeRDark.css" />
+		<script>SyntaxHighlighter.all();</script>
+		<link rel="stylesheet" type="text/css" href="s.css">
+		<title>Study</title>
+	</head>
+	<body>
+		<h1>条件文2</h1>
+		<p>役立つ時がくるからやっておこう。</p>
+		<h2>switch文</h2>
+		<p>switch文はif文同様にある条件に応じた処理を行うもの。</p>
+		<p>例えばif文を用いて以下の様なコードを書いたとしよう。</p>
+		<pre class="brush:java;">
+    			int i = 20;
+    			
+	    		if( i==0 ){
+	    			System.out.println("0");
+	    		}else if( i==10 ){
+	    			System.out.println("10");
+	    		}else if( i==20 ){
+	    			System.out.println("20");
+	    		}else if( i==30 ){
+	    			System.out.println("30");
+	    		}else{
+	    			System.out.println("else");
+	    		}
+		</pre>
+		<p>else ifが続いて面倒だね。これをswitch文を用いたコードに書き換えると、</p>
+				<pre class="brush:java;" title="例1">
+    			int i = 20;
+    			
+	    		switch( i ){
+	    			case 0:
+	    				System.out.println("0");
+	    				break;
+	    			case 10:
+	    				System.out.println("10");
+	    				break;
+	    			case 20:
+	    				System.out.println("20");
+	    				break;
+	    			case 30:
+	    				System.out.println("30");
+	    				break;
+	    			default:
+	    				System.out.println("else");
+	    				break;
+	    		}
+		</pre>
+		<p>ちょっとだけスマートになったような。switch文の構文を以下に示すね。</p>
+						<pre class="brush:java;">
+	    		switch( 式 ){
+	    			case 値1:
+	    				式の価が値1と一致した時の処理
+	    				break;
+	    			case 値2:
+	    				式の値が値2と一致した時の処理
+	    				break;
+	    			case 値3:
+	    				式の値が値3と一致した時の処理
+	    				break;
+	    			case 値4:
+	    				式の値が値4と一致した時の処理
+	    				break;
+	    			default:
+	    				式の値が値1から値4のどれとも一致しなかった時の処理
+	    				break;
+	    		}
+		</pre>
+		<p>式の部分の値と一致したところの処理が実行されるって感じ。
+		defaultは一致する値がなかった時にされる処理。defaultは書かなくてもいいよ。
+		一致する値がなかったら何もしないって感じでね。</p>
+		<p>上の例1を例に再度説明するね。式の部分がiとなっている。iは20となっているため、
+		この値と一致している部分の処理、すなわち20と表示される処理が行われるって感じ。</p>
+		<p>breakについて触れていないけどこれは後に説明するから今は無視して。</p>
+		
+		<br><br><h2>例</h2>
+		<pre class="brush:java;" title="例1">
+		class Test {
+			public static void main(String[] args) {
+				int i = 20;
+				switch (i + 3) {
+				case 23:
+					System.out.println("23だ");
+					break;
+				default:
+					System.out.println("else");
+					break;
+				}
+			}
+		}
+		</pre>
+		<pre class="brush:java;" title="実行結果">23だ</pre>
+
+		<pre class="brush:java;" title="例2">
+		class Test {
+			public static void main(String[] args) {
+				char c = 'A';
+				switch (c) {
+				case 'a':
+					System.out.println("a");
+					break;
+				case 'b':
+					System.out.println("b");
+					break;
+				}
+			}
+		}
+		</pre>
+		<pre class="brush:java;" title="実行結果">
+			何も出力されない</pre>
+
+		<br><br><br><p><a href="Study.html">もどる</a></p>
+	</body>
+<html>

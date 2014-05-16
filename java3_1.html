@@ -1,0 +1,237 @@
+<html>
+	<head>
+		<meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
+		<script src="scripts/shCore.js"></script>
+		<script type="text/javascript" src="scripts/shBrushJava.js"></script>
+		<script type="text/javascript" src="scripts/shBrushCpp.js"></script>
+
+		<link type="text/css" rel="stylesheet" href="styles/shCore.css" />
+		<link type="text/css" rel="stylesheet" href="styles/shCoreDefault.css" />
+		<link type="text/css" rel="stylesheet" href="styles/shThemeRDark.css" />
+		<script>SyntaxHighlighter.all();</script>
+		<link rel="stylesheet" type="text/css" href="s.css">
+		<title>Study</title>
+	</head>
+	<body>
+		<h1>条件文</h1>
+
+		<h2>if文</h2>
+		<p>例えば、「明日晴れたら外へ出て公園へ行く」というのは良くあるようなことだけど、</p>
+		<p>これは条件「明日が晴れ」によって行動を選択しているね。</p>
+		<p>このようにある条件の結果に応じて処理を行うことがif文を使うとできるようになるよ。</p>
+		<p>if文の書き方は以下の様な感じ。</p>
+		<pre class="brush:java;">
+			if(条件){
+				条件が真だった時の処理をこのブロックに書く。
+			}</pre>
+		<p>上で述べた日本語の例で当てはめてみると、</p>
+		<pre class="brush:java;">
+			if(明日晴れる){
+				外へ行く;
+				公園へ行く;
+			}</pre>
+		<p>こんな感じ。</p>
+		
+		<br><br><h2>if文の条件の部分にはtrueかfalse</h2>
+		<p>上で示したif分の条件の部分にはtrueかfalseが得られる文を書けばいいよ。</p>
+		<p>条件がtrueの時のみ後ろのブロック内に書いた処理が行われるよ。</p>
+		<p>ちょっと例を示すね。</p>
+		<pre class="brush:java;" title="例1">
+			class Test{
+				public static void main(String[] args){
+		
+					if(true){
+						System.out.println("いえい");
+						Ststem.out.println("ふふふ");
+					}
+					System.out.println("どうだったかな");
+					
+				}
+			}
+		</pre>
+		<pre class="brush:java;" title="実行結果">
+			いえい
+			ふふふ</pre>
+		<pre class="brush:java;" title="例2">
+			class Test{
+				public static void main(String[] args){
+
+					if(false){
+						System.out.println("いえい");
+						Ststem.out.println("ふふふ");
+					}
+					System.out.println("どうだったかな");
+					
+				}
+			}
+		</pre>
+		<pre class="brush:java;" title="実行結果">
+			どうだったかな</pre>
+		<p>ここで思い出してほしいのは<a href="java2_3.html" target="blank">boolaen<a>のことだ。</p>
+		<p>booleanの型の変数にはtrueとfalseが代入できたね。でも、だからといってboolean型の変数に対して</p>
+		<pre class="brush:java;">
+		boolean b = true;
+		boolean b = false;</pre>
+		<p>しかできなかったというとそれは違うね。</p>
+				<pre class="brush:java;">
+		boolean b = 1<3;
+		boolean b = (3==3) && (3!=3);</pre>
+		<p>こんなこともできたよね。覚えてるかな。そして！！if文でもこれは同様なんだよ！！以下の様なことができるんだよ。</p>
+		<p>そしてこっちの方が一般的だよ。条件にtrueやfalseを直接書くなんてif文使う意味あるのかよって感じだしね。</p>
+		<pre class="brush:java;" title="例3">
+			class Test{
+				public static void main(String[] args){
+					int i = 0;
+					
+					if( i<10 ){
+						System.out.println("iの値は10より小さい");
+					}
+					System.out.println("どうだったかな");
+					
+				}
+			}
+		</pre>
+		<pre class="brush:java;" title="実行結果">
+			iの値は10より小さい
+			どうだったかな</pre>
+				<pre class="brush:java;" title="例4">
+			class Test{
+				public static void main(String[] args){
+					char c = 'd';
+					
+					if( c=='d' && 10<3 ){
+						System.out.println("cの値はdかつ10は3より小さい");
+					}
+					System.out.println("どうだったかな");
+					
+				}
+			}
+		</pre>
+		<pre class="brush:java;" title="実行結果">
+			どうだったかな</pre>
+		
+		
+		<br><br><h2>そうでなかったら</h2>
+		<p>最初の例「明日晴れたら外へ出て公園へ行く」を思い出してほしい。</p>
+		<p>これに、そうでなかったらどうするかを追加しみてみよう。</p>
+		<p>「明日晴れたら外へ出て公園へ行く。そうでなかったら家にいる。」って感じ。</p>
+		<p>つまり条件が真だったら外出て公園行く。偽だったら家にいるって感じだね。</p>
+		<p>この様な分岐はif　elseを使うと実現できるよ。書き方は以下の様な感じ。</p>
+		<pre class="brush:java;">
+			if(条件){
+				条件が真だった時の処理をこのブロックに書く。
+			}else{
+				条件が偽だった時の処理をこのブロックに書く。
+			}</pre>
+		<p>上で述べた日本語の例で当てはめてみると、</p>
+		<pre class="brush:java;">
+			if(明日晴れる){
+				外へ行く;
+				公園へ行く;
+			}else{
+				家にいる;
+			}</pre>
+		<p>こんな感じ。例をあげておくね。</p>
+		<pre class="brush:java;" title="例4">
+			class Test{
+				public static void main(String[] args){
+					int a = 10;
+					if( a<20 ){
+						System.out.println("aの値は20より小さい");
+					}else{
+						System.out.println("aの値は20より大きい");
+					}
+					
+					System.out.println("どうだったかな");
+					
+				}
+			}
+		</pre>
+		<pre class="brush:java;" title="実行結果">
+			aの値は20より小さい
+			どうだったかな</pre>
+		
+		
+		<br><br><h2>複数の条件</h2>
+		<p>今度は最初の例「明日晴れたら外へ出て公園へ行く」に複数の条件を追加してみよう。</p>
+		<p>「明日晴れたら外へ出て公園へ行く、晴れでなく曇りだったら図書館へ行く、晴れでも曇りでもなく雨だったら家にいる、どれでもなかったら何もしない」</p>
+		<p>この様な複数の条件の判定を行う場合は以下の様に書く。</p>
+		<pre class="brush:java;">
+			if(条件1){
+				条件1が真だった時の処理をこのブロックに書く。
+			}else if(条件2){
+				条件1が偽で条件2が真だった時の処理をこのブロックに書く。
+			}else if(条件3){
+				条件1と条件2が偽で条件3が真だった時の処理をこのブロックに書く。
+			}else{
+				どの条件も偽だった時の処理をこのブロックに書く。
+			}</pre>
+		<p>上で述べた日本語の例で当てはめてみると、</p>
+		<pre class="brush:java;">
+			if(明日晴れる){
+				外へ行く
+				公園へ行く
+			}else if(明日曇る){
+				図書館へ行く
+			}else if(明日雨){
+				家にいる。
+			}else{
+				何もしない。
+			}</pre>
+		<p>else ifはいくつでも書くことができるよ。上から順に条件を判定してtrueとなった条件部分の処理を行うよ。</p>
+		<p>ただし、trueとなった条件が見つかりその部分の処理を行ったらif文はそこで終わってその先の判定は行わないよ。</p>
+		<p>どういうことかというと、明日晴れるが真だったから外行く、公園行く処理を行った、この後に明日曇りだったり明日雨という条件の判定は行わないってこと。</p>
+		<pre class="brush:java;" title="例5">
+		class Test{
+			public static void main(String[] args){
+    			int i = 20;
+	    		if(i > 100){
+	    			System.out.println("100より大きい");
+	    		}else if(i > 50){
+	    			System.out.println("50～100");
+	    		}else if(i > 0){
+	    			System.out.println("0～50");
+	    		}else{
+	    			System.out.println("0以下");
+	    		}
+			}
+		}	
+		</pre>
+		<pre class="brush:java;" title="実行結果">
+			0～50</pre>
+			
+		<br><br><h2>例</h2>
+		<p>if文の中にif文。(if文のネストというよ。入れ子ともいうよ。)</p>
+		<pre class="brush:java;" title="入れ子">
+		class Test{
+			public static void main(String[] args){
+				int i = 20;
+    			if(i != 100){
+    				if(i < 50){
+    					System.out.println("100でなく50以下");
+    				}
+    			}
+			}
+		}
+		</pre>
+		<pre class="brush:java;" title="実行結果">
+			0～50</pre>
+		<p>これは下の様に書き換えが可能。</p>
+		<pre class="brush:java;" title="入れ子書き換え">	
+		class Test{
+   			public static void main(String[] args){
+    			int i = 20;
+    			if( (i != 100) && (i<50) ){
+    				System.out.println("100でなく50以下");
+    			}
+			}
+		}
+		</pre>
+		<pre class="brush:java;" title="実行結果">
+			0～50</pre>
+		<br><br><br><p><a href="Study.html">もどる</a></p>
+		
+		
+		
+	</body>
+<html>

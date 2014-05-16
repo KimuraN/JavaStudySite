@@ -1,0 +1,205 @@
+<html>
+	<head>
+		<meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
+		<script src="scripts/shCore.js"></script>
+		<script type="text/javascript" src="scripts/shBrushJava.js"></script>
+		<script type="text/javascript" src="scripts/shBrushCpp.js"></script>
+
+		<link type="text/css" rel="stylesheet" href="styles/shCore.css" />
+		<link type="text/css" rel="stylesheet" href="styles/shCoreDefault.css" />
+		<link type="text/css" rel="stylesheet" href="styles/shThemeRDark.css" />
+		<script>SyntaxHighlighter.all();</script>
+		<link rel="stylesheet" type="text/css" href="s.css">
+		<title>Study</title>
+	</head>
+	<body>
+		<h1>変数</h1>
+		<p>C言語でもやったからわかりやすいと思うよ</p>
+		<h2>変数ってなんだ</h2>
+		<p>カンタンにいうと変数とは箱だよ。</p>
+		<p>箱には何か値を入れておくことができる。</p>
+		<p>箱に入っているものを取り出すことができる。</p>
+		<p>箱に入っているものを変更できる。</p>
+		<p>こんなイメージを持てば良いと思う。</p>
+		
+		<br><br>
+		<h2>型</h2>
+		<p>変数には値を入れることができるんだけど、その値には色々な種類がある。</p>
+		<p>数値だったり、文字列だったりね。</p>
+		<p>値の種類を表すものが型だと考えれば良いよ。以下にいくつか型の例を示しておくね。</p>
+		<ul>
+			<li><p>int　　整数</p></li>
+			<li><p>double　　小数点数</p></li>
+			<li><p>char　　　文字(一文字)</p></li>
+			<li><p>String　　文字列</p></li>
+			<li><p>boolean　　trueかfalse(真か偽)</p></li>
+		</ul>
+		<p>これらの型は基本型というよ(ただしStringは基本型っぽく使えるだけで別物。これだけ大文字で始まってるしね。)。</p>
+		<p>基本型には他にも色々あるから気になったら調べてみてね。</p>
+		
+		
+		<br><br>
+		<h2>変数を用意する</h2>
+		<p>そろそろ変数を使ってみるよ。</p>
+		<p>変数を使うにはまず変数を用意しなくてはいけない。箱もなにもないのに値を入れたりすることはできないからね。</p>
+		<p>変数を用意するには以下のようにコードを書くよ。</p>
+		<pre class="brush:java;">
+		型名 変数名;</pre>
+		<p>このように、変数に入れる値の種類(型)と変数の名前を指定して変数を用意するよ。以下に例を示すね。</p>
+		<pre class="brush:java;" title="例">
+		class Test{
+			public static void main(String[] args){
+				int number;
+			}
+		}
+		</pre>
+		<p>上の例では、int型の値を入れることができるnumberって名前の箱を用意したって考えればいいよ。</p>
+		<p>ちなみに変数を用意することを宣言するっていうことが多いから覚えておいて。</p>
+		
+		<br><br>
+		<h2>変数に値を入れる</h2>
+		<p>変数を用意したらそこに何か値を入れよう。用意しただけでは何も入ってないからね。</p>
+		<p>ちなみに値をいれることは代入ということが多いよ。</p>
+		<pre class="brush:java;" title="Test.java">
+			class Test{
+				public static void main(String[] args){
+					int number;
+				}
+			}
+		</pre>
+		<p>上の様に宣言したnumberという変数に値を入れてみる。</p>
+		<p>変数に値をいれるときは、以下の様にコードを書くよ。</p>
+		<pre class="brush:java;">
+		変数名 = 値;</pre>
+		<p>つまり、</p>
+		<pre class="brush:java;" title="Test.java">
+			class Test{
+				public static void main(String[] args){
+					int number;
+					number = 4649;
+				}
+			}
+		</pre>
+		<p>この様にして、numberに値(4649)を代入できるよ。イコールには右辺と左辺の値が同じってイメージがあるけど、
+		プログラミング的には右辺のものを左辺のものに入れるって感じだから注意しておいてね。</p>
+		<p>変数の宣言と代入を一気に、</p>
+		<pre class="brush:java;" title="Test.java">
+			class Test{
+				public static void main(String[] args){
+					char c = 'A';	
+				}
+			}
+		</pre>
+		<p>としてしまうこともできるよ。(文字(一文字)は'と'で囲む。)</p>
+		<pre class="brush:java;" title="Test.java">
+			class Test{
+				public static void main(String[] args){
+					char c,c2,c3,c4;	
+				}
+			}
+		</pre>
+		<p>こんな感じに一度にたくさんの同じ型の変数を宣言することもできるよ。</p>
+		<p>注意してほしいけど、ある型で宣言された変数に対して、他の型の値を代入することは基本的にできないよ。</p>
+		<p>例えばint型で宣言した変数に、double型の値を入れるみたいな感じね。</p>
+		<pre class="brush:java;" title="ダメな例">
+			class Test{
+				public static void main(String[] args){
+					int i = 3.44;
+				}
+			}
+		</pre>
+		<p>これを許したら、何のために型を指定して変数を宣言したんだってなるでしょ。</p>
+		
+		
+		<br><br>
+		<h2>変数にいれる値は1つだけ</h2>
+		<p>変数にはたくさんの値をいれておくことはできないよ。</p>
+		<pre class="brush:java;" title="Test.java">
+			class Test{
+				public static void main(String[] args){
+					int i;
+					i = 3;
+					i = 5;
+				}
+			}
+		</pre>
+		<p>上の例ではiに3を代入して、その後に5を代入してるけど、iに3と5の両方の値を入れておくことはできないよ。</p>
+		<p>iに3を代入した時点ではiには3が入っているけど、i=5をした時点で3は消えてiには5が入っていることになるよ。</p>
+		
+		
+		<br><br>
+		<h2>変数から値を取り出す</h2>
+		<p>変数に値をいれっぱなしだとあれだから、入れた値は使いたいよね。</p>
+		<p>変数から値を取り出すような文法はないよ。(代入にはイコールがあったね。)</p>
+		<p>ただ、変数を値の様に扱えばいいんだよ。例をみたほうが分かりやすいと思うから以下にいくつか例を上げるね。</p>
+		<pre class="brush:java;" title="Test.java">
+			class Test{
+				public static void main(String[] args){
+					int i;
+					int num;
+					char c = 'A';
+					i = 3;
+					num = i;
+					System.out.println(i);
+					i = 5;
+					System.out.println(i);
+					System.out.println(num);
+					System.out.println(c);
+				}
+			}
+		</pre>
+		<pre class="brush:java;" title="実行結果">
+			3
+			5
+			3
+			A</pre>
+		
+		<br>	
+		<pre class="brush:java;" title="Test.java">
+			class Test{
+				public static void main(String[] args){
+					int i = 10;
+					i+3;
+					System.out.println(i);
+					i = i+10;
+					System.out.println(i);
+				}
+			}
+		</pre>
+		<pre class="brush:java;" title="実行結果">
+			10
+			20</pre>
+		<p>i+3をしてるけど、その結果をどこにもいれていないからiの中身は10のまま。i=i+10では、i+10の結果をiに代入してるから
+		iの中身は20になる。</p>
+				<br>	
+		<pre class="brush:java;" title="Test.java">
+			class Test{
+				public static void main(String[] args){
+					String str = "banana";
+					int i = 3;
+					System.out.println(i+10);
+					System.out.println(i+str);
+				}
+			}
+		</pre>
+		<pre class="brush:java;" title="実行結果">
+			13
+			3banana</pre>
+		<p>上に示した例からどんな感じかわかってくれたかな。この変は慣れれば簡単だからいろいろいじってみれば良いと思うよ。</p>
+		
+		<br><br>
+		<h2>おまけ</h2>
+		<pre class="brush:java;">
+			i = i+3;
+			num = num+10;
+			str = str+"hello";</pre>
+		<p>この様な文は、</p>
+		<pre class="brush:java;">
+			i += 3;
+			num += 10;
+			str += "hello";</pre>
+		<p>と書くことができるよ。(+の部分は-とか*とか変えてもいいからね)（文字列に対して-とか*は使えないとかは気をつけてね。）</p>
+		
+		<br><br><br><p><a href="Study.html">もどる</a></p>
+	</body>
+<html>
