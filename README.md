@@ -1,4 +1,5 @@
-Cloud9test
+JavaStudySiete
 ==========
 
-cloud9test
+サークルで使用するサイト。
+これを機に再びgitの練習も。
