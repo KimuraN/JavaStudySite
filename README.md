@@ -1,4 +1,4 @@
-JavaStudySiete
+JavaStudySite
 ==========
 
 サークルで使用するサイト。
