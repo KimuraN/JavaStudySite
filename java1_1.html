@@ -16,20 +16,22 @@
   	<title>Study</title>
   </head>
   <body>
-  <h1>Javaまずはここから</h1>
+    <h1>Javaまずはここから</h1>
   
-  <h2>まずはこれから</h2>
-  <pre class="brush:java;" title="Test.java">
-  class Test{
-
-	public static void main(String args[]){
-		System.out.println("Hello");
-	}
-
-  }
-  </pre> 
-  <p>とりあえず、Test.javaファイルを作って上の様なコードを書いて<a href="java0.html">実行</a>してみて。</p>
-  <p>Helloと表示されたはず。それじゃあ、ここからjavaの説明をしていくよ。</p>
+    <h2>まずはこれから</h2>
+    <pre class="brush:java;" title="例1">
+         class Test{
+        
+    	    public static void main(String args[]){
+    		    System.out.println("Hello");
+    	    }
+    
+        }
+    </pre> 
+    <p>とりあえず、Test.javaファイルを作って上の様なコードを書いて<a href="java0.html">実行</a>してみて。</p>
+    <p>え?ファイルの作り方がわからない？？</p>
+    <p><b>emacs Test.java</b>とターミルにコマンドを打てば良いよ。</p>
+    <p>Helloと表示されたはず。おめでとう。それじゃあ、ここからjavaの説明をしていくよ。</p>
 
 
 
@@ -39,8 +41,9 @@
   <br><br>
  <h2>１つ以上のクラスが必要</h2>
   </pre> 
-  <p>Javaのプログラムはクラスがいくつか集まってできているよ。つまり1つ以上クラスが絶対必要ってこと。
-  </p><p>クラスってなんだよって思うと思うけど、のちのち説明するから今はjavaプログラムを作る要素と考えておいて。</p>
+  <p>Javaのプログラムはクラスがいくつか集まってできている。つまり1つ以上クラスが絶対必要ってこと。
+  </p><p>クラスってなんだよって思うだろう。しかし、クラスについてはのちのち詳しく説明するから、
+  今はjavaプログラムを作るものみたいに考えておいてほしい。</p>
   <p>クラスは以下の様なコードで表すことができる。</p>
    <pre class="brush:java;" title="クラス名.java">
   class クラス名{
@@ -49,8 +52,8 @@
 
   }
   </pre>
-  <p>上の例ではTestというクラス名のクラスを用意している。</p>
-  <p>このクラスの中に色々かいていく。</p>
+  <p>上の例1ではTestというクラス名のクラスを用意している。</p>
+  <p>このクラスの中に色々に色々書き加えていくよ。</p>
   <p>クラスの中ってどこだよっていうと｛と｝で囲まれた部分。ちなみに｛と｝で囲まれた部分をブロックというよ。</p>
   <p>ルールとして原則クラス名とファイル名は同じじゃないとダメ。上の例でもクラス名がTestだからTest.javaってなってるでしょ。つまり以下に述べるようなのはダメだよ。</p>
    <pre class="brush:java;"title="Tnaka.java　ダメな例">
@@ -63,84 +66,75 @@
 
 	}
   </pre>
-  <p>クラス名の先頭は大文字にするっていう暗黙のルールがあるからとりあえず大文字にしておこっか。</p>
+  <p>最後になったけど、クラス名の先頭は大文字にするっていう暗黙のルールがあるからとりあえず大文字にしておこう。</p>
   
   
   
   
  
-   <br><br>
-  <h2>Mainメソッドが実行される。</h2>
-  <p>javaにはクラスが必要って言ったけど、クラスだけは実行できないよ。(コンパイルはできる)</p>
-  <p>なぜなら、計算機はmainメソッドの中に書かれた内容を上から順に実行していくからだよ。</p>
-  <p>mainメソッドとは上の例でいう</p>
-    </pre> 
-   <pre class="brush:java;">
-	public static void main(String[] args){
-	
-		//ここに書いたものを上から実行していく。
-		
-	}
-  </pre>
-  <p>の部分。
-  メソッドとはC言語でいう関数だと思えば良いよ。C言語で、</p>
-    <pre class="brush:c;">
-	main(){
-	
-	}
-  </pre>
-  だったのが、
-   <pre class="brush:java;">
-	public static void main(String[] args){
+    <br><br>
+    <h2>Mainメソッドが実行される。</h2>
+    <p>javaにはクラスが必要って言ったけど、クラスだけは実行できないよ。(コンパイルはできる)</p>
+    <p>なぜなら、計算機はmainメソッドの中に書かれた内容を上から順に実行していくからだよ。</p>
+    <p>mainメソッドとは上の例でいう</p>
+    <pre class="brush:java;">
+    	public static void main(String[] args){
+		    //ここに書いたものを上から実行していく。
+	    }
+    </pre>
+    <p>の部分だよ。</p>
+    <p>とりあえずはmainメソッドの中に書いたもの上から順に実行されることが分かれば良いよ。</p>
+    <p>mainメソッドというものの中ってどこかというとやっぱり｛と｝で囲まれた部分。</p>
+    <p>つまり、下の様なものはダメ。</p>
+    <pre class="brush:java;"title="ダメな例">
+    	class Test{
+	    	public static void main(String[] args){
 
-	}
-  </pre>
-  <p>こうなったと考えればいいよ。とりあえずはmainメソッドというものの中に書いたものが実行されるんだとだけ分かれば良いよ。</p>
-  <p>Mainメソッドというものの中ってどこかというとやっぱり｛と｝で囲まれた部分。</p>
-  <p>つまり、下の様なものはダメ。</p>
-     <pre class="brush:java;"title="ダメな例">
-	class Test{
+		    }
+		    System.out.println("Hello");
+	 }
+    </pre>
+    <p>javaにはクラスが必要だから、mainメソッドだけ書いた以下の様なコードももちろんダメだ。</p>
+    <pre class="brush:java;"title="ダメな例">
 		public static void main(String[] args){
 
 		}
-		System.out.println("Hello");
-	}
-  </pre>
-  <p>※javaにはクラスが必要だから、Mainメソッドだけ書いてもダメ</p>
+    </pre>
   
   
   
   
-  
-   <br><br>
-  <h2>文字の出力</h2>
-  <p>文字の出力は、</p>
-  <pre class="brush:java;">
-	System.out.println(出力させたい文字列);
-  </pre>
-  <p>の様にして行うことができる。上の例では、</p>
-   <pre class="brush:java;">
-  System.out.println("Hello");
-  </pre>
- <p> となっていたから、Helloと表示される。文字列は""で囲む必要があるため、Helloでなく"Hello"を括弧の中に書く必要がある。</p>
-  <p>文字列以外にも色々なものを表示できるよ。</p>
-   <pre class="brush:java;" title="Helloこんにちは　を出力">
-  System.out.println("Hello"  + "こんにちは");
-  </pre>
-  <pre class="brush:java;" title="7を出力">
-  System.out.println(3+4);
-  </pre>
-  <pre class="brush:java;" title="3+4を出力">
-  System.out.println("3+4");
-  </pre>
-  <pre class="brush:java;" title="Hello34を出力">
-  System.out.println("Hello"+ 3 + 4);
-  </pre>
-  <p>まず、"Hello"+3で"Hello3"となって、"Hello3"+4で"Hello34"となる。</p>
-  <pre class="brush:java;" title="Hello7を出力">
-  System.out.println("Hello"+ (3 + 4));
-  </pre>
-  <p>まず、(3+7)で7となり、"Hello"+7で"Hello7"となる。</p>
+    <br><br>
+    <h2>文字の出力</h2>
+    <p>文字の出力は、</p>
+     <pre class="brush:java;">
+	    System.out.println(出力させたい文字列);
+    </pre>
+    <p>の様にして行うことができる。上の例では、</p>
+    <pre class="brush:java;">
+        System.out.println("Hello");
+    </pre>
+    <p> となっていたから、Helloと表示される。文字列は""で囲む必要があるため、Helloでなく"Hello"とする必要がある。</p>
+    <p>文字列以外にも色々なものを表示できるよ。</p>
+    <pre class="brush:java;" title="Helloこんにちは　を出力">
+        System.out.println("Hello"  + "こんにちは");
+    </pre>
+    <pre class="brush:java;" title="7を出力">
+        System.out.println(3+4);
+    </pre>
+    <pre class="brush:java;" title="3+4を出力">
+        System.out.println("3+4");
+    </pre>
+    <pre class="brush:java;" title="Hello34を出力">
+        System.out.println("Hello"+ 3 + 4);
+    </pre>
+    <p>まず、"Hello"+3で"Hello3"となって、"Hello3"+4で"Hello34"となる。</p>
+    <pre class="brush:java;" title="Hello7を出力">
+        System.out.println("Hello"+ (3 + 4));
+    </pre>
+    <p>まず、(3+7)で7となり、"Hello"+7で"Hello7"となる。これについては優先順位を説明をみると
+        分かるようになると思うから、今なぜこうなるのか分からなくても大丈夫。
+    </p>
   
   
   <br><br>  
