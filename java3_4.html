@@ -1,0 +1,63 @@
+<html>
+	<head>
+		<meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
+		<script src="scripts/shCore.js"></script>
+		<script type="text/javascript" src="scripts/shBrushJava.js"></script>
+		<script type="text/javascript" src="scripts/shBrushCpp.js"></script>
+
+		<link type="text/css" rel="stylesheet" href="styles/shCore.css" />
+		<link type="text/css" rel="stylesheet" href="styles/shCoreDefault.css" />
+		<link type="text/css" rel="stylesheet" href="styles/shThemeRDark.css" />
+		<script>SyntaxHighlighter.all();</script>
+		<link rel="stylesheet" type="text/css" href="s.css">
+		<title>Study</title>
+	</head>
+	<body>
+		<h1>while文</h1>
+		
+		<h2>while文</h2>
+        <p>while文はfor文同様繰り返しを実現する。</p>
+        <p>さっそくだけどwhile文の構文を以下に示す。</p>
+        <pre class="brush:java;">
+            while(条件){
+	            繰り返す処理
+			}</pre>
+        <p>条件が真な限り処理を繰り返すよ。</p>
+        <p>for文の初期処理と繰り返し後の処理を書かない場合、
+        <pre class="brush:java;">
+            for(; 条件;){
+	            繰り返す処理
+			}</pre>
+        <p>これと同じだと考えればいいよ。</p>
+        <p>for文とwhile文の使い分けだけど、ここは英語の意味になって・・</p>
+        <p>forは「～から～」って感じだから繰り返す範囲や回数が決まっていたりする時。</p>
+        <p>whileは「～の間」って感じだから回数とか決まってなくてある条件の間って感じの時。</p>
+        <p>まぁ、行いたいことが実現できればどっちを使おうなんて気にしなくていいと思うよ。</p>
+        </p>
+        
+        <br><br>
+        <h2>注意してほしいこと</h2>
+        <p>while文は繰り返しが終了しない無限ループに陥る可能性がfor文より高いように思う。</p>
+		<p>例えば以下のコードを見てほしい。</p>
+		<pre class="brush:java;">
+		    int a = 0;
+            while( a<30 ){
+	            System.out.println(a);
+			}</pre>
+		<p>これはいつまでたってもa<30は真のままだから永遠にaの値を出力させ続けるよ。</p>
+		<p>これを解決するには、</p>
+		<pre class="brush:java;">
+		    int a = 0;
+            while( a<30 ){
+	            System.out.println(a);
+	            a++;
+			}</pre>
+		<p>こうすればいいね。参考程度にこれをfor文で書き換えると、</p>
+		<pre class="brush:java;">
+            for(int a = 0; a<30; a++){
+                System.out.prinltn(a);
+            }</pre>
+        <p>こうなるよね。</p>
+		<br><br><br><p><a href="Study.html">もどる</a></p>
+	</body>
+</html>
