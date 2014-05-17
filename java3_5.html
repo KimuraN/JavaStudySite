@@ -1,0 +1,83 @@
+<html>
+	<head>
+		<meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
+		<script src="scripts/shCore.js"></script>
+		<script type="text/javascript" src="scripts/shBrushJava.js"></script>
+		<script type="text/javascript" src="scripts/shBrushCpp.js"></script>
+
+		<link type="text/css" rel="stylesheet" href="styles/shCore.css" />
+		<link type="text/css" rel="stylesheet" href="styles/shCoreDefault.css" />
+		<link type="text/css" rel="stylesheet" href="styles/shThemeRDark.css" />
+		<script>SyntaxHighlighter.all();</script>
+		<link rel="stylesheet" type="text/css" href="s.css">
+		<title>Study</title>
+	</head>
+	<body>
+		<h1>break</h1>
+		<h2>流れを止めるbreak</h2>
+		<p>breakを用いると流れを止めることができる。whileとかforで繰り返してる途中にもう止めろ！って感じでね。
+		</p>
+		<p>break;を記述するとその時点でブロックを抜けるってことだ。</p>
+		<pre class="brush:java;">
+            for(int i = 0; i < 10; i++){
+                System.out.println(i);
+                if(i == 3){
+                    break;
+                }
+            }</pre>
+        <p>上の例をみてほしい。本来なら、10回処理が繰り返されるよね。</p>
+        <p>しかし、iが3になった時点でbreakが処理される。</p>
+        <p>breakはブロックを抜けるんだったよね。
+        そのため繰り返しは4回で終了するよ。</p>
+        <p>if文のブロック内にbreakがあるから抜けるのはif文のブロックであって
+            for文のブロックは抜けないじゃないかって？？
+        </p>
+        <p>breakは流れを止めるんだよ。if文に流れはないよね。だからfor文のブロックを
+            抜けるよ。したがってfor文やwhile文を使わずにif文とbreak文の二つで使うこともできないよ。
+        </p>
+        <pre class="brush:java;" title="ダメな例">
+            int a = 3;
+            if(a < 3){
+                break;
+            }</pre>
+            
+        <h2>例</h2>
+        <pre class="brush:java;" title="例1">
+        class Test{
+            public static void main(String[] args){
+                for(int i = 0; i < 5; i++){
+                    for(int j = 0; j < 5; j++){
+                        System.out.println("j");
+                        if( j==2 ){
+                            break;
+                        }
+                    }
+                    System.out.println("i");
+                }
+            }
+        }</pre>
+        <p>ループのなかにループがある二重ループだね。内側のループでbreakしているから、内側のfor文は抜けるけど
+            外側のfor文は抜けないよ。
+        </p>
+        <pre class="brush:java;" title="例2">
+        class Test{
+            public static void main(String[] args){
+                    int a = 1;
+                    switch(a){
+                        case:0
+                            System.out.println(0);
+                            break;
+                        case:1
+                            System.out.println(1);
+                        case:2
+                            System.out.println(2);
+                            break;
+                    }
+            }
+        }</pre>
+        <p>1を出力した後にbreakがないからブロックを抜けずに2も出力する。</p>
+        
+            
+		<br><br><br><p><a href="Study.html">もどる</a></p>
+	</body>
+</html>
