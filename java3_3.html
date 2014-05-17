@@ -35,7 +35,7 @@
 		<p>たしかにSystem.out.println("こんにちは")を2000回書けば実現可能だ。</p>
 		<p>でもそんなのは面倒だよね。ここでfor文の出番だね。for文を使うと以下の様に実現できる。
 		</p>
-		<pre class="brush:java;">
+		<pre class="brush:java;"title="例1">
 		class Test {
 			public static void main(String[] args) {
                 for(int i = 0; i < 2000; i++){
@@ -46,7 +46,87 @@
 		</pre>
 		<p>どうかな。文法的意味は分からなくても行数が減ったことは分かるよね。</p>
 		<p>それじゃあ、for文の構文を説明する。</p>
-
+		<pre class="brush:java;">
+            for(　初期処理; 条件; 繰り返しが一度終わった後の処理){
+	            繰り返す処理
+			}</pre>
+		<p>詳しい説明を例1を用いてしていくね。</p>
+		<p>初期処理は、繰り返し文を行う前に一度だけ処理される。</p>
+		<p>例1では変数iを用意して0で初期化しているね。</p>
+		<P>条件は、if文の時に出てきた条件と同じ。条件が真である限り繰り返しは続くよ。</p>
+		<p>繰り返しが一度終わった後の処理は文字通り一度そのまま。</p>
+		<p>例1では、繰り返し一回毎にiの値を1増加させている。</p>
+		
+		<br><br>
+		<h2>別に書かなくてもいいよ</h2>
+		<p>for文には必ず、初期処理、条件、繰り返し後の処理、が必要というわけではない。</p>
+	    <p>例えば初期処理がないfor文</p>
+	    <pre class="brush:java;">
+            for(　; 条件; 繰り返しが一度終わった後の処理){
+	            繰り返す処理
+			}</pre>
+		<p>であったり、初期処理と条件がないfor文</p>
+		<pre class="brush:java;">
+            for(　;　; 繰り返しが一度終わった後の処理){
+	            繰り返す処理(条件を書かない場合は条件が真となる。)
+			}</pre>
+        <p>であったり全てがないfor文</p>
+        <pre class="brush:java;">
+            for(; ;){
+	            繰り返す処理
+			}</pre>
+		<p>などが可能だ。セミコロンは必要だから忘れないでね。</p>
+		
+		<br><br><h2>変数の有効範囲</h2>
+		<p>まずは下の例を見てほしい。</p>
+	    <pre class="brush:java;">
+            for(int a = 10; a<20; a++){
+	            System.out.println(a);
+			}</pre>
+		<p>変数aを用意してaの値を増加させながら出力するfor文だね。</p>
+		<p>今回はこのaに注目してほしい。基本的に変数は宣言したブロック内でしか
+		    使うことができない。何度もいうけどブロックとは{}で囲まれた部分だよ。
+		</p>
+		<p>aはfor文内で宣言したからfor文のブロック内でしか使用ができない。</p>
+		<p>つまり、下の様なのはダメってこと。</p>
+		<pre class="brush:java;">
+        class Test{
+            public static void main(String[] args){
+                for(int a = 0; a<20; a++){
+                    System.out.println(a);
+                }
+                System.out.prinltn(a);//for文の外でaは使えない。
+            }
+        } </pre>
+        <p>変数の有効範囲はスコープと呼ばれている。上で述べた話はfor文時に限った
+            ものではないから、時間があればのちのちさらに詳しく説明するよ。
+        </p>
+        
+        <br><br><h2>例</h2>
+       
+        <pre class="brush:java;">
+        class Test{
+            public static void main(String[] args){
+                int a = 3;
+                for(int a = 20; a<30; a++){
+                    System.out.println(a);
+                }
+            }
+        } </pre>
+        <pre class="brush:java;" title="実行結果">
+		20から30を出力</pre>
+		
+		<pre class="brush:java;">
+        class Test{
+            public static void main(String[] args){
+                for(int a = 20; a>0; a--){
+                    System.out.println(a);
+                }
+            }
+        } </pre>
+        <pre class="brush:java;" title="実行結果">
+		20から1を出力</pre>
+		
 		<br><br><br><p><a href="Study.html">もどる</a></p>
 	</body>
 </html>
