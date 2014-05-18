@@ -1,0 +1,88 @@
+<html>
+	<head>
+		<meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
+		<script src="scripts/shCore.js"></script>
+		<script type="text/javascript" src="scripts/shBrushJava.js"></script>
+		<script type="text/javascript" src="scripts/shBrushCpp.js"></script>
+
+		<link type="text/css" rel="stylesheet" href="styles/shCore.css" />
+		<link type="text/css" rel="stylesheet" href="styles/shCoreDefault.css" />
+		<link type="text/css" rel="stylesheet" href="styles/shThemeRDark.css" />
+		<script>SyntaxHighlighter.all();</script>
+		<link rel="stylesheet" type="text/css" href="s.css">
+		<title>Study</title>
+	</head>
+	<body>
+		<h1>配列</h1>
+		
+		<h2>配列とは</h2>
+		<p>例えばint型の変数を100000個用意したいとしよう。</p>
+		<pre class="brush:java;">
+        int a1 = 1;
+        int a2 = 2;
+        int a3 = 3;
+        ・・・・
+        int a31034 = 31034;
+        int a32035 = 31035;
+        ・・・・</pre>
+        <p>これは面倒だね。</p>
+        <p>配列はこの様な同じ型の
+        変数を複数利用したい時に使うと便利。たくさんの並んだ箱だと考えればいいよ。</p>
+        <p>実際の使い方は以下で説明するよ。</p>
+        
+        <br><br>
+        <h2>配列の宣言</h2>
+        <p>変数を用意する時は型と変数名が必要だったね。</p>
+        <pre class="brush:java;">
+        int num;</pre>
+        <p>の様にね。それでは、配列の場合はどうするのか。</p>
+        <p>[]をつけるだけで良いんだよ。どういうことかって？？</p>
+        <pre class="brush:java;">
+        int[] is;
+        char[] cs;</pre>
+        <p>この様にすると、
+        int型の配列の変数isとchar型の配列の変数csということになる。
+        </p>
+        <p>ちなみに、</p>
+        <pre class="brush:java;">
+        int is[];
+        char cs[];</pre>
+        <p>の様に、変数名の後ろに[]をつけても同じ意味になるよ。</p>
+        
+        
+        <br><br>
+        <h2>配列の生成</h2>
+        <p>変数を用意したら配列をつくらないとね。配列をつくる時は初めに配列の大きさを
+            決める必要がある。
+        </p>
+        <p>配列の大きさってのはいくつの連続した箱かってこと。</p>
+        <P>ちなみに後から配列の大きさを変えることはできないからね。それじゃあ、下に例を示すね。</P>
+        <pre class="brush:java;">
+        is = new int[10];</pre>
+        <p>
+        <p>これは大きさが10の配列を作った例である。</p>
+        <pre class="brush:java;">
+        変数名 = new 型[配列の大きさ];</pre>
+        <p>って感じだね。このことを配列を生成するというよ。生成した配列には10
+        個の箱があるけど中には何も入っていないよ。次は値を代入してみよう。
+        </p>
+         <pre class="brush:java;">
+        is[0] = 1;
+        is[1] = 2;
+        is[2] = 3;
+        ・・・
+        is[9] = 10;</pre>
+        <p>こんな感じだね。</p>
+        <pre class="brush:java;">
+        変数名[添え字]</pre>
+        <p>上の様に添え字を使って何番目の箱かを指定することができるよ。</p>
+        <p>ちなみに添え字は0始まりだから9までだよ。</p>
+        <p></p>
+        <pre class="brush:java;">
+        </pre>
+ 
+        
+            
+		<br><br><br><p><a href="Study.html">もどる</a></p>
+	</body>
+</html>
