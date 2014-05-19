@@ -77,11 +77,66 @@
         変数名[添え字]</pre>
         <p>上の様に添え字を使って何番目の箱かを指定することができるよ。</p>
         <p>ちなみに添え字は0始まりだから9までだよ。</p>
-        <p></p>
+        <p>宣言と生成を同時にすると、</p>
         <pre class="brush:java;">
+            int[] array = new int[10];
+            String[] array2 = new String[3];
         </pre>
- 
+        <p>配列を生成した後にそれぞれの要素を代入するのは面倒だなって時には、</p>
+        <pre class="brush:java;">
+            int[] array = {1,2,3}
+            boolean[] array2 = {true,true};
+        </pre>
+        <p>の様な記述も可能だよ。これは、
+                <pre class="brush:java;">
+            int array = new int[3];
+            array[0] = 1;
+            array[1] = 2;
+            array[3] = 3;
+            boolean array2 = new boolean[2];
+            array2[0] = true;
+            array2[1] = true;</pre>
+        <p>と同様の意味だよ。</p>
+        <p>ただし上の記述を使う時は変数の宣言と同時に行う
+            必要があるよ。変数だけ用意しておいて・・・ってのはだめってこと。
+        </p>
+        <p>ダメな例を以下に示しておく。</p>
+        <pre class="brush:java;" title="ダメな例">
+        int[] array;
+        array = {1,2,3};</pre>
         
+        
+        <h2>例</h2>
+        <pre class="brush:java;">
+        class Test{
+            
+            public static void main(String[] args){
+                int array = new int[3];
+                for(int i = 0; i < array.length; i++){
+                    array[i] = i;
+                }
+                for(int i = 0; i < array.length; i++){
+                    System.out.println(i);
+                }
+            }
+        
+        }</pre>
+        <p>1,2,3が出力される。配列名.lengthで配列の大きさを獲得できるよ。今回の場合は3だね。</p>
+        <pre class="brush:java;">
+        class Test{
+            
+            public static void main(String[] args){
+                int array = {1,2,3};
+                for(int i = 0; i < array.length; i++){
+                    array[i] = array[i]*2;
+                }
+                for(int i = 0; i < array.length; i++){
+                    System.out.println(i);
+                }
+            }
+        
+        }</pre>  
+        <p>2,4,6が出力される。</p>
             
 		<br><br><br><p><a href="Study.html">もどる</a></p>
 	</body>
