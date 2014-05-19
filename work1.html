@@ -1,0 +1,58 @@
+<html>
+	<head>
+		<meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
+		<script src="scripts/shCore.js"></script>
+		<script type="text/javascript" src="scripts/shBrushJava.js"></script>
+		<script type="text/javascript" src="scripts/shBrushCpp.js"></script>
+
+		<link type="text/css" rel="stylesheet" href="styles/shCore.css" />
+		<link type="text/css" rel="stylesheet" href="styles/shCoreDefault.css" />
+		<link type="text/css" rel="stylesheet" href="styles/shThemeRDark.css" />
+		<script>SyntaxHighlighter.all();</script>
+		<link rel="stylesheet" type="text/css" href="s.css">
+		<title>Work</title>
+	</head>
+	<body>
+		<h1>フレーム</h1>
+		
+		<h2>フレーム</h2>
+		<p>フレームってのはwindowsでいうウィンドウ。ブラウザとかゲームとか起動させると画面が表示されるよね。</p>
+        <p>その画面だと思えばいいよ。</p>
+        <pre class="brush:java;" title="例">
+        import javax.swing.JFrame;
+        
+        public class Test{
+            
+            public static void main(String[] args){
+                JFrame frame = new JFrame("FrameName");
+                frame.setSize(640,480);
+                frame.setDefaultCloseOperation(JFrame.EXIT_ON_CLOSE);
+                frame.setVisible(true);
+            
+            }
+        
+        }</pre>  
+        <p>例を実行してごらん。フレームが表示されたよね。おめでとう。</p>
+        
+        <h2>説明</h2>
+        <pre class="brush:java">
+        JFrame frame = new JFrame("FrameName");</pre>
+        <p>JFrame型の変数frameにJFrameを生成。
+        引数に文字列を与えるとその文字列がフレームの名前になるよ。</p>
+        <pre class="brush:java">
+        frame.setSize(640,480);</pre>
+        <p>フレームのサイズを決めるよ。幅、高さの順でint値を引数に与えるよ。</p>
+        <pre class="brush:java">
+        frame.setDefaultCloseOperation(JFrame.EXIT_ON_CLOSE);</pre>
+        <p>フレームを閉じた時にどう処理するか決めているよ。×ボタンを押したらどうするかってこと。</p>
+        <p>今回はフレームを閉じたらプログラムも終了するようにしたよ。</p>
+        <pre class="brush:java">
+            frame.setVisible(true);</pre>
+        <p>フレームが見えるか見えないか。つまり表示するかしないかを決めるよ。引数にtrueを
+            与えているからフレームを表示させるよ。falseなら表示されないよ。
+        </p>    
+        
+            
+		<br><br><br><p><a href="Work.html">もどる</a></p>
+	</body>
+</html>
