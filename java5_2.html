@@ -1,0 +1,52 @@
+<html>
+	<head>
+		<meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
+		<script src="scripts/shCore.js"></script>
+		<script type="text/javascript" src="scripts/shBrushJava.js"></script>
+		<script type="text/javascript" src="scripts/shBrushCpp.js"></script>
+
+		<link type="text/css" rel="stylesheet" href="styles/shCore.css" />
+		<link type="text/css" rel="stylesheet" href="styles/shCoreDefault.css" />
+		<link type="text/css" rel="stylesheet" href="styles/shThemeRDark.css" />
+		<script>SyntaxHighlighter.all();</script>
+		<link rel="stylesheet" type="text/css" href="s.css">
+		<title>Study</title>
+	</head>
+	<body>
+		<h1>クラス</h1>
+
+        <br><br>
+        <h2>クラスってなんだ</h2>
+        <p>これまでJavaプログラム書く時、必ず1つは登場したクラス。</p>
+        <p>今回はそのクラスについて詳しく説明をするよ。これから先、一度は耳や目にするんじゃないかな。</p>
+        <br>
+        <p>クラスとはオブジェクトを生成するもととなるものなんだけど、
+        よくクラスとは設計図だ、という例えが良くされる。</p>
+        <p>僕が1年の時でクラスは設計図だと説明された時は「わかんねえよぼけ。もっと良い例えしろよ」って
+            思ったけど、やっぱりなかなか悪くない例えだから僕も設計図と例えさせてもらうよ。
+        </p>
+        <p>ただ設計図といっても、物の作り方を1から10まで示したものではなく、「振る舞い」と「状態」を定義するものと考えてほしい。</p>
+        <p>オブジェクトは「振る舞い」と「状態」をもつものだったよね。つまり、
+            オブジェクトをつくるための設計図には「振る舞い」と「状態」だけ定義されていれば良いんだよ。</p>
+        
+        <br><br>
+        <h2>犬をつくろう</h2>
+        <p>犬をつくるとしてクラスの例をあげてみる。</p>
+        <p>クラスまずクラスの名前だけど、犬を生み出すための設計図なんだか「犬」でいいよね。</p>
+        <p>日本語はあれだから英語にして、クラス名は大文字始まりが良いから「Dog」にしようか。</p>
+        <p>とういうことで</p>
+        <pre class="brush:java;">
+        class Dog{
+            
+        }</pre>
+        <p>こんな感じかな。</p>
+        <p>ただしクラスの中には何もない、つまり「状態」と「振る舞い」の定義がなにもないから、この設計図から生み出した犬は、名前も体重も品種名も
+            年齢も・・・何も持っていなくて、歩くことも何かを食べることもほえることも・・・
+            なにもできない犬だよ。
+        </p>
+        <p>これから先で「状態」と「振る舞い」を定義していくよ。</p>
+        <p>また、さっきからクラスは設計図でオブジェクトをつくるもとって言っているけど、どうやってクラスからオブジェクトを生成するかの説明も次回以降行うよ。</p>
+        
+		<br><br><br><p><a href="Study.html">もどる</a></p>
+	</body>
+</html>
