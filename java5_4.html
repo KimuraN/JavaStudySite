@@ -1,0 +1,66 @@
+<html>
+	<head>
+		<meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
+		<script src="scripts/shCore.js"></script>
+		<script type="text/javascript" src="scripts/shBrushJava.js"></script>
+		<script type="text/javascript" src="scripts/shBrushCpp.js"></script>
+
+		<link type="text/css" rel="stylesheet" href="styles/shCore.css" />
+		<link type="text/css" rel="stylesheet" href="styles/shCoreDefault.css" />
+		<link type="text/css" rel="stylesheet" href="styles/shThemeRDark.css" />
+		<script>SyntaxHighlighter.all();</script>
+		<link rel="stylesheet" type="text/css" href="s.css">
+		<title>Study</title>
+	</head>
+	<body>
+		<h1>「振る舞い」があるクラス</h1>
+
+        <br><br>
+        <h2></h2>
+        <p>5-3で作成したクラスは</p>
+        <pre class="brush:java;">
+        class Dog{
+            String name;
+            int age;
+        }</pre>
+        <p>だったね。今回はこのクラスに振る舞いを付け加えよう</p>
+        <p>まず、犬に必要な振る舞いを考える。</p>
+        <ul>
+            <li><p>吠える</p></li>
+            <li><p>走る</p></li>
+        </ul>
+        <p>これぐらいかな。</p>
+        <p>振る舞いはメソッドにより定義を行う。メソッドはCとかでいう関数みたいなものだよ。</p>
+        <p>まず、メソッドの構文の説明を行う。</p>
+        <pre class="brush:java;">
+        修飾子 返り値の型 メソッド名(引数){
+            メソッドの中身(処理)
+        }
+        </pre>
+        <p>以上の様な構文でメソッドを記述できる。</p>
+        <p>意味が分からないと思うけど、とりあえず今は修飾子はpublic、
+            返り値の型はvoid,引数は空欄(何も書かない)としておこう。
+        </p>
+        <p>実際に、吠える、走るのメソッドを記述すると</p>
+        <pre class="brush:java;">
+        class Dog{
+            String name;
+            int age;
+        
+            public void bark(){
+                System.out.println("wan wan");
+            }
+            
+            public void run(){
+                System.out.println("running...");
+            }
+        }
+        </pre>
+        <p>こうなる。実際にPCから犬の鳴き声を発声させたりするのは
+            大変だからどちらも吠える走るの処理は文字列を出力するのみにしておいたよ。
+        </p>
+        <p>おめでとう。これでとりあえず犬のクラスは完成。次回は犬を生成する。</p>
+        
+		<br><br><br><p><a href="Study.html">もどる</a></p>
+	</body>
+</html>

@@ -1,0 +1,91 @@
+<html>
+	<head>
+		<meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
+		<script src="scripts/shCore.js"></script>
+		<script type="text/javascript" src="scripts/shBrushJava.js"></script>
+		<script type="text/javascript" src="scripts/shBrushCpp.js"></script>
+
+		<link type="text/css" rel="stylesheet" href="styles/shCore.css" />
+		<link type="text/css" rel="stylesheet" href="styles/shCoreDefault.css" />
+		<link type="text/css" rel="stylesheet" href="styles/shThemeRDark.css" />
+		<script>SyntaxHighlighter.all();</script>
+		<link rel="stylesheet" type="text/css" href="s.css">
+		<title>Study</title>
+	</head>
+	<body>
+		<h1>犬の生成</h1>
+
+        <br><br>
+        <h2>犬が生まれるよ</h2>
+        <p>5-4で作成したクラスは</p>
+        <pre class="brush:java;">
+        class Dog{
+            String name;
+            int age;
+        
+            public void bark(){
+                System.out.println("wan wan");
+            }
+            
+            public void run(){
+                System.out.println("running...");
+            }
+        }
+        </pre>
+        <p>こんなんだったね。</p>
+        <p>クラスは設計図と例えたように、これは犬ではない。犬をつくるための設計図である。
+            よっていまからこのクラスから実態がある犬を生成する。
+        </p>
+        <p>Dogクラスはmainメソッドを持っていないため、犬を生成し実行するためのTestクラスを以下の
+            様に作成する。(Test.javaという新しいファイルを作るんだよ)
+        </p>
+        <pre class="brush:java;">
+        class Test{
+ 
+            public static void main(String[] args){
+            
+            }
+            
+        }</pre>
+        <p>まず生成した犬をいれるための変数を用意する。int aみたいな感じだったよね。ただデータの種類はintでもstringでもない。</p>
+        <p>データの型はDogである。クラス名と同じ。変数を用意するとこんな感じ。</p>
+        <pre class="brush:java;">
+        class Test{
+ 
+            public static void main(String[] args){
+                Dog mydog;
+            }
+            
+        }</pre>
+        <p>Dog型のmydogという変数名の変数を宣言した。</p>
+        <p>この時点で、mydogの中は何も入っていないよ。整数の時だって、int aとしただけでは
+            aには何もはいってないでしょ。
+        </p>
+        <p>では実際に、mydogにDogクラスから生成した実態を入れると</p>
+        <pre class="brush:java;">
+        class Test{
+ 
+            public static void main(String[] args){
+                Dog mydog;
+                mydog = new Dog();
+            }
+            
+        }</pre>
+        <p>この様になる。実態のことをインスタンスと呼ぶから、この一連の
+            処理をインスタンスの生成と言うよ。今の処理を一度に行うと、
+        </p>
+        <pre class="brush:java;">
+        class Test{
+ 
+            public static void main(String[] args){
+                Dog mydog = new Dog();
+            }
+            
+        }</pre>
+        <pre class="brush:java;">
+        クラス名　変数名 = new クラス名();</pre>
+        <p>って感じかな。</p>
+        
+		<br><br><br><p><a href="Study.html">もどる</a></p>
+	</body>
+</html>
