@@ -1,0 +1,53 @@
+<html>
+	<head>
+		<meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
+		<script src="scripts/shCore.js"></script>
+		<script type="text/javascript" src="scripts/shBrushJava.js"></script>
+		<script type="text/javascript" src="scripts/shBrushCpp.js"></script>
+
+		<link type="text/css" rel="stylesheet" href="styles/shCore.css" />
+		<link type="text/css" rel="stylesheet" href="styles/shCoreDefault.css" />
+		<link type="text/css" rel="stylesheet" href="styles/shThemeRDark.css" />
+		<script>SyntaxHighlighter.all();</script>
+		<link rel="stylesheet" type="text/css" href="s.css">
+		<title>Study</title>
+	</head>
+	<body>
+		<h1>「状態」があるクラス</h1>
+
+        <br><br>
+        <h2></h2>
+        <p>5-2で作成したクラスは</p>
+        <pre class="brush:java;">
+        class Dog{
+        
+        }</pre>
+        <p>だったよね。これは状態も振る舞いもない。</p>
+        <p>今回はこのクラスに状態を付け加えよう。</p>
+        <p>状態のことはフィールドとかフィールド変数とか、インスタンス変数などと呼ばれるよ。</p>
+        <p>とりあえずは、クラスが持っている変数が状態だと思えばいいと思うよ。</p>
+        <p>まず、犬に必要な状態を考える。</p>
+        <ul>
+            <li><p>名前</p></li>
+            <li><p>年齢</p></li>
+        </ul>
+        <p>とりあえず、これぐらいにしよう。それじゃあこれらの状態をクラスに定義するよ。</p>
+        <p>どう定義するかって？？。クラスにそれぞれの変数を宣言すれば良い。</p>
+        <pre class="brush:java;">
+        class Dog{
+            String name;
+            int age;
+        }</pre>
+        <p>こんな感じだよ。</p>
+        <p>この名前と年齢を持った犬を生成することができるクラスを定義することができた。振る舞い
+            は何もないから何をすることもできないけどね。
+        </p>
+        <p>ちなみに、いままで変数はmainメソッドの中で宣言してきたのに対し、Dogクラスはmainメソッド
+        が存在さえしない。</p>
+        <p>クラスは設計図だと説明したけど、設計図は何かを実行するものではないよね。</p>
+        <p>したがってmainメソッドは必要ないよ。</p>
+        <p>じゃあどこで犬を生成し実行するかということはのちのち説明する。</p>
+        
+		<br><br><br><p><a href="Study.html">もどる</a></p>
+	</body>
+</html>
